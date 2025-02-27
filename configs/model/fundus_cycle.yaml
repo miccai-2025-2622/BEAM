@@ -1,0 +1,29 @@
+_target_: src.models.fundus_module.FundusLitModule
+# fundus.yaml
+
+output_dir: "${paths.output_dir}" 
+lora_rank_unet: 128
+lora_rank_vae: 4
+allow_tf32: True 
+enable_xformers_memory_efficient_attention: True
+gradient_checkpointing: False  
+gan_disc_type: "vagan_clip"
+gan_loss_type: "multilevel_sigmoid" 
+lambda_cycle: 1.0  
+lambda_cycle_lpips: 10.0
+lambda_gan: 0.5 
+lambda_idt: 1  
+lambda_idt_lpips: 1.0
+learning_rate: 1e-5
+adam_beta1: 0.9  
+adam_beta2: 0.999  # Adam 优化器的 beta2 参数
+adam_weight_decay: 1e-2 
+adam_epsilon: 1e-08 
+lr_scheduler: "constant" 
+lr_warmup_steps: 500  # 学习率预热步数
+lr_num_cycles: 1  # 学习率调度器的循环次数
+lr_power: 1.0  # 多项式调度器的幂指数
+max_grad_norm: 10.0  # 最大梯度范数
+revision: None  # 模型的修订版本
+viz_freq: 50  
+validation_num_images: 10

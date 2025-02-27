@@ -1,0 +1,14 @@
+defaults:
+  # - model_checkpoint
+  - model_summary
+  - rich_progress_bar
+  - _self_
+
+model_checkpoint:
+  dirpath: ${paths.output_dir}/ckpt_lightning
+  save_last: True
+  every_n_train_steps: 5000
+  auto_insert_metric_name: False
+
+model_summary:
+  max_depth: -1

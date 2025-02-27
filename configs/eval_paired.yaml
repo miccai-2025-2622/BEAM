@@ -1,0 +1,30 @@
+# @package _global_
+
+# specify here default configuration
+# order of defaults determines the order in which configs override each other
+defaults:
+  - _self_
+  - data: fundus_paired
+  - model: fundus_paired
+  - callbacks: fundus_paired
+  - logger: wandb # set logger here or use command line (e.g. `python train.py logger=tensorboard`)
+  - trainer: gpu
+  - paths: fundus_paired
+  - extras: default
+  - hydra: default
+  # debugging config (enable through command line, e.g. `python train.py debug=default)
+  - debug: null
+
+# task name, determines output directory path
+task_name: "seg_test"
+
+# tags to help you identify your experiments
+# you can overwrite this in experiment configs
+# overwrite from command line with `python train.py tags="[first_tag, second_tag]"`
+tags: ["dev"]
+
+# ckpt_path is necessary for eval
+ckpt_path: "logs/train_paired_noD_1e-5lr_hfc_tmi_prompt_full_modeling/runs/2025-02-14_10-59-26/unpaired_g2b_single_A40/zlo6qcuw/checkpoints/epoch=29-step=15538.ckpt"
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: 3407
