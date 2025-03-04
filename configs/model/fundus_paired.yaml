@@ -1,0 +1,32 @@
+_target_: src.models.fundus_module.FundusOneWayLitModule
+# fundus.yaml
+
+output_dir: "${paths.output_dir}" 
+lora_rank_unet: 128
+lora_rank_vae: 4  
+allow_tf32: True 
+enable_xformers_memory_efficient_attention: True
+gradient_checkpointing: False  
+gan_disc_type: None
+gan_loss_type: "multilevel_sigmoid" 
+lambda_l2: 1.0
+lambda_lhfc: 1.0
+lambda_lpips: 5.0
+lambda_gan: 0.5 # CAN ADJUST
+lambda_idt: 1.0
+lambda_idt_lpips: 1.0
+learning_rate: 5e-6 # CAN ADJUST
+adam_beta1: 0.9  
+adam_beta2: 0.999  
+adam_weight_decay: 1e-2 
+adam_epsilon: 1e-08 
+lr_scheduler: "constant" # CAN ADJUST
+lr_warmup_steps: 500
+lr_num_cycles: 1  
+lr_power: 1.0  
+max_grad_norm: 10.0
+revision: None  
+viz_freq: 50  
+validation_num_images: 10
+ckpt_direction: "b2a"
+# pretrained_path: "/public/home/wangzh1/miccai2025/img2img-turbo/output/cyclegan_turbo/EyeQ_good2bad/checkpoints/model_25001.pkl"

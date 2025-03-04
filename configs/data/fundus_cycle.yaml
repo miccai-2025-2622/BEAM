@@ -1,0 +1,7 @@
+_target_: src.data.fundus_datamodule.FundusDataModule
+data_dir: ${paths.data_dir}
+output_dir: ${paths.output_dir}
+train_image_prep: "resize_286_randomcrop_256x256_hflip"
+val_image_prep: "no_resize"
+batch_size: 1
+num_workers: 8
